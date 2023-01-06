@@ -28,7 +28,7 @@ namespace SnakeLadder_Game
 
 
                 }
-                else if (Dice == 1)
+                else if (Dice == 5)
                 {
                     Console.WriteLine("Ladder");
                     position += Dice;
@@ -52,18 +52,19 @@ namespace SnakeLadder_Game
 
                 position = position + Dice;
                 Console.WriteLine("Player at position " + position);
-                if (position > WinningPosition)
+                
+                if (position == WinningPosition)
+                {
+                    Console.WriteLine("Player wins");
+                    break;
+                }
+               
+                else if (position > WinningPosition)
                 {
                     Console.WriteLine("Player position is greater than winning position");
                     position = position - Dice;
 
 
-                }
-
-                if (position == WinningPosition)
-                {
-                    Console.WriteLine("Player wins");
-                    break;
                 }
 
             }
