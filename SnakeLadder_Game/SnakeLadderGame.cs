@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace SnakeLadder_Game
 {
-    internal class SnakeLadderGame
+    public class SnakeLadderGame
     {
-        public static void UC1Start()
+        public static void UC2RollsDice()
         {
             int start = 0;
             int position = 0;
-            
-            Console.WriteLine("Player at position {0} for to start the game  " ,start);
+            Random random = new Random();
+            int Dice = random.Next(1, 7);
+            Console.WriteLine("Player at position {0} for to start the game  ", start);
+            Console.WriteLine("After rolls the dice ,Player at postion : " + Dice);
         }
     }
 }
