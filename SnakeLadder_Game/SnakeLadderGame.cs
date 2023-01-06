@@ -8,14 +8,39 @@ namespace SnakeLadder_Game
 {
     public class SnakeLadderGame
     {
-        public static void UC2RollsDice()
+        public static void UC3SnakeLadder()
         {
             int start = 0;
             int position = 0;
-            Random random = new Random();
-            int Dice = random.Next(1, 7);
             Console.WriteLine("Player at position {0} for to start the game  ", start);
+
+
+            Random random = new Random();
+            int Dice = random.Next(0, 7);
+
             Console.WriteLine("After rolls the dice ,Player at postion : " + Dice);
+            int option = random.Next(0, 7);
+            if (option == 0)
+            {
+                Console.WriteLine("No play ");
+
+
+            }
+            else if (option == 1)
+            {
+                Console.WriteLine("Ladder");
+                position += Dice;
+                Console.WriteLine("Player at positon " + position);
+
+            }
+            else if (option == 3)
+            {
+                Console.WriteLine("Snake");
+                position -= Dice;
+                Console.WriteLine("Player at position " + position);
+
+            }
         }
     }
-}
+}    
+    
