@@ -19,7 +19,7 @@ namespace SnakeLadder_Game
             int Dice = random.Next(0, 7);
 
             Console.WriteLine("After rolls the dice ,Player at postion : " + Dice);
-            int option = random.Next(0, 7);
+            int option = random.Next(3);
             if (option == 0)
             {
                 Console.WriteLine("No play ");
