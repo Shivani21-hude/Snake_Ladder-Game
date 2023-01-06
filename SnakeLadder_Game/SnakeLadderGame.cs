@@ -8,7 +8,7 @@ namespace SnakeLadder_Game
 {
     public class SnakeLadderGame
     {
-        public static void UC4WinningPosition()
+        public static void UC5WinningPosition()
         {
 
             int position = 0;
@@ -48,11 +48,18 @@ namespace SnakeLadder_Game
                     }
 
                 }
+              
 
                 position = position + Dice;
                 Console.WriteLine("Player at position " + position);
+                if (position > WinningPosition)
+                {
+                    Console.WriteLine("Player position is greater than winning position");
+                    position = position - Dice;
 
-                position++;
+
+                }
+
                 if (position == WinningPosition)
                 {
                     Console.WriteLine("Player wins");
@@ -63,7 +70,8 @@ namespace SnakeLadder_Game
 
         }
 
-    }        
-    
-}    
+    }
+}     
+
+       
     
