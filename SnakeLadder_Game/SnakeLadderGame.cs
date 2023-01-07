@@ -16,7 +16,7 @@ namespace SnakeLadder_Game
 
 
             Random random = new Random();
-            int Dice = random.Next(0, 7);
+            int Dice = random.Next(1, 7);
 
             Console.WriteLine("After rolls the dice ,Player at postion : " + Dice);
             int option = random.Next(3);
