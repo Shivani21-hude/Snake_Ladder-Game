@@ -18,36 +18,38 @@ namespace SnakeLadder_Game
             {
 
                 Random random = new Random();
-                int Dice = random.Next(0, 7);
-
+                int Dice = random.Next(1, 7);
 
                 Console.WriteLine("Rolls the dice : " + Dice);
 
-                if (Dice == 0)
+                int option = random.Next(3);
+                if (option == 0)
                 {
                     Console.WriteLine("No play ");
 
+
                 }
-                else if (Dice == 5)
+                else if (option == 1)
                 {
                     Console.WriteLine("Ladder");
                     position += Dice;
                     Console.WriteLine("Player at positon " + position);
 
                 }
-                else if (Dice == 3)
+                else if (option == 2)
                 {
                     Console.WriteLine("Snake");
                     position -= Dice;
                     Console.WriteLine("Player at position " + position);
 
-                    if (Dice < 0)
+                    if (option < 0)
                     {
                         position = 0;
                         Console.WriteLine("Current position is :  " + position);
                     }
 
                 }
+
 
                 position = position + Dice;
                 Console.WriteLine("Player at position " + position);
