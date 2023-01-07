@@ -8,8 +8,9 @@ namespace SnakeLadder_Game
 {
     public class SnakeLadderGame
     {
-        public static void UC6Countrolls()
+        public static void CountNoOfRolls()
         {
+
 
             int position = 0;
             int WinningPosition = 100;
@@ -23,58 +24,63 @@ namespace SnakeLadder_Game
                 Console.WriteLine("Rolls the dice : " + Dice);
 
                 int option = random.Next(3);
-                if (option == 0)
+                switch (option)
                 {
-                    Console.WriteLine("No play ");
+                    case 0:
+                        Console.WriteLine("No Play");
+                        break;
+                    case 1:
+                        Console.WriteLine("Ladder");
+                        position += Dice;
+                        Console.WriteLine("Current Position is ==>" + position);
 
+                        if (position > 100)
+                        {
+                            position = position - Dice;
+                            Console.WriteLine("Current Position is ==>" + position);
+                        }
+                        break;
+                    case 2:
+                        Console.WriteLine("Snake");
+                        position -= Dice;
+                        Console.WriteLine("Current Position is ==>" + position);
 
+                        if (position < 0)
+                        {
+                            position = 0;
+                            Console.WriteLine("Current Position is ==>" + position);
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Not Correct");
+                        break;
                 }
-                else if (option == 1)
+                        position = position + Dice;
+                        Console.WriteLine("Player at position " + position);
+
+                        if (position == WinningPosition)
+                        {
+                            Console.WriteLine("<========= Player wins ============>");
+                            break;
+                        }
+                else if (position < 0)
                 {
-                    Console.WriteLine("Ladder");
-                    position += Dice;
-                    Console.WriteLine("Player at positon " + position);
-
-                }
-                else if (option == 2)
-                {
-                    Console.WriteLine("Snake");
-                    position -= Dice;
-                    Console.WriteLine("Player at position " + position);
-
-                    if (option < 0)
-                    {
-                        position = 0;
-                        Console.WriteLine("Current position is :  " + position);
-                    }
-
+                    position = 0;
+                    Console.WriteLine("Current Position is ==>" + position);
                 }
 
 
-                position = position + Dice;
-                Console.WriteLine("Player at position " + position);
 
-                if (position == WinningPosition)
-                {
-                    Console.WriteLine("Player wins");
-                    break;
-                }
-                else if (position > WinningPosition)
-                {
-                    Console.WriteLine("Player position is greater than winning position");
-                    position = position - Dice;
-
-                }
                 count++;
 
-            }
 
+
+            }
             Console.WriteLine("No of dice rolls" + count);
 
         }
-
     }
-} 
+}
 
        
     

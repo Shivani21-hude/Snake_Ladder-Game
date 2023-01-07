@@ -6,7 +6,7 @@ namespace SnakeLadder_Game
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake & Ladder Game \n");
-            SnakeLadderGame.UC6Countrolls();
+            SnakeLadderGame.CountNoOfRolls();
         }
     }
 }
